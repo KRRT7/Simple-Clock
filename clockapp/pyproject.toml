@@ -1,0 +1,99 @@
+# This project was generated with 0.3.20 using template: https://github.com/beeware/briefcase-template@v0.3.20
+[tool.briefcase]
+project_name = "Clock App"
+bundle = "com.clockapp.pydis"
+version = "0.0.1"
+url = "https://pydis.clockapp.com/clockapp"
+license.file = "LICENSE"
+author = "devs_des1re"
+author_email = "devs_des1re@pydis.clockapp.com"
+
+[tool.briefcase.app.clockapp]
+formal_name = "Clock App"
+description = "a simple clock app for your basic needs"
+long_description = """More details about the app should go here.
+"""
+sources = ["src/clockapp"]
+test_sources = ["tests"]
+icon = "src/clockapp/resources/Simple_Clock"
+requires = [
+    "PySide6-Essentials~=6.7",
+    # "PySide6-Addons~=6.7",
+]
+test_requires = ["pytest"]
+
+[tool.briefcase.app.clockapp.macOS]
+universal_build = true
+requires = ["std-nslog~=1.0.3"]
+
+[tool.briefcase.app.clockapp.linux]
+requires = []
+
+[tool.briefcase.app.clockapp.linux.system.debian]
+system_requires = []
+
+system_runtime_requires = [
+    # Derived from https://doc.qt.io/qt-6/linux-requirements.html
+    "libxext6",
+    "libxrender1",
+    "libx11-xcb1",
+    "libxkbcommon-x11-0",
+    "libxcb-image0",
+    "libxcb-cursor0",
+    "libxcb-shape0",
+    "libxcb-randr0",
+    "libxcb-xfixes0",
+    "libxcb-sync1",
+    "libxcb-icccm4",
+    "libxcb-keysyms1",
+    "libfontconfig1",
+    "libsm6",
+    "libice6",
+    "libglib2.0-0",
+    "libgl1",
+    "libegl1",
+    "libdbus-1-3",
+]
+
+[tool.briefcase.app.clockapp.linux.system.rhel]
+system_requires = []
+
+system_runtime_requires = ["qt6-qtbase-gui"]
+
+[tool.briefcase.app.clockapp.linux.system.suse]
+system_requires = []
+
+system_runtime_requires = ["libgthread-2_0-0", "libQt6Gui6"]
+
+[tool.briefcase.app.clockapp.linux.system.arch]
+system_requires = []
+
+system_runtime_requires = ["qt6-base"]
+
+[tool.briefcase.app.clockapp.linux.appimage]
+manylinux = "manylinux_2_28"
+
+system_requires = [
+    # ?? FIXME
+]
+
+linuxdeploy_plugins = []
+
+[tool.briefcase.app.clockapp.linux.flatpak]
+flatpak_runtime = "org.kde.Platform"
+flatpak_runtime_version = "6.7"
+flatpak_sdk = "org.kde.Sdk"
+
+[tool.briefcase.app.clockapp.windows]
+requires = []
+
+# Mobile deployments
+[tool.briefcase.app.clockapp.iOS]
+supported = false
+
+[tool.briefcase.app.clockapp.android]
+supported = false
+
+# Web deployments
+[tool.briefcase.app.clockapp.web]
+supported = false
